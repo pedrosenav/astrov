@@ -10,6 +10,7 @@ export default function HeroSection() {
   return (
     <section className="relative flex min-h-fit flex-col items-center justify-center overflow-hidden bg-white">
       <Carousel />
+      {/* FIXME: Mudar altura do carrossel para o mobile */}
 
       <div className="margin-auto absolute top-80 z-20 w-full max-w-[30rem] p-5 md:left-20 md:m-0 ">
         <span className="flex w-full">

@@ -18,7 +18,7 @@ import { cn } from '@/lib/utils'
 export default function ProjectsSection() {
   return (
     <section className="py-8">
-      <Container className="flex max-h-[35rem] w-full items-center justify-between overflow-clip lg:pl-14">
+      <Container className="flex max-h-[35rem] w-full items-center justify-between overflow-clip ">
         <div className="relative h-full w-fit justify-self-start">
           {/* Gradient */}
           <div className="absolute -left-20 bottom-24 z-10 h-20 w-[44rem] bg-gradient-to-t from-white from-40% to-transparent"></div>
@@ -52,8 +52,8 @@ export default function ProjectsSection() {
           </div>
         </div>
 
-        {/* CTA */}
-        <div className="absolute left-0 right-0 z-20 m-auto flex h-fit w-full max-w-[28rem] flex-col items-start justify-between gap-10 overflow-clip rounded-xl bg-gradient-to-t from-astrov-400 to-astrov-500 p-8 shadow-xl lg:relative lg:m-0">
+        {/* Card */}
+        <div className="absolute left-0 right-0 z-20 mx-auto flex h-fit max-w-xs flex-col items-start justify-between gap-10 overflow-clip rounded-xl bg-gradient-to-t from-astrov-400 to-astrov-500 p-8 shadow-xl sm:max-w-md lg:relative lg:m-0">
           <h1 className="font-alt text-5xl font-bold text-white">
             Check out more of my work
           </h1>

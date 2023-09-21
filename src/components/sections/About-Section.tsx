@@ -14,6 +14,7 @@ export default function AboutSection() {
         className="rounded-md bg-astrov-600 p-1 transition-all hover:scale-110 hover:bg-astrov-500 "
         href={url}
         title={platformName}
+        target="_blank"
       >
         <Icon
           size={28}

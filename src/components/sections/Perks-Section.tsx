@@ -52,7 +52,12 @@ const perkList = [
 ]
 
 export default function PerksSection() {
-  const [expanded, setExpanded] = useState<null | number>(0)
+  const [expanded, setExpanded] = useState<number>(0)
+  /* TODO: trocar os perks com tempo */
+
+  function handleMouseOver(i: number) {
+    setExpanded(i)
+  }
 
   return (
     <section>
@@ -77,7 +82,7 @@ export default function PerksSection() {
               key={perk.title}
               {...perk}
               isExpanded={expanded === i}
-              onMouseOver={() => setExpanded(i)}
+              onMouseOver={() => handleMouseOver(i)}
             />
           ))}
         </div>
