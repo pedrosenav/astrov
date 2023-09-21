@@ -8,9 +8,9 @@ import Container from '../Container'
 import Halftone from '../Halftone'
 import { cn } from '@/lib/utils'
 
-import image1 from '@/assets/images/Carousel/1.jpg'
-import image2 from '@/assets/images/Carousel/2.jpeg'
-import image3 from '@/assets/images/Carousel/3.jpeg'
+import image1 from '@/assets/images/carousel/1.jpg'
+import image2 from '@/assets/images/carousel/2.jpeg'
+import image3 from '@/assets/images/carousel/3.jpeg'
 
 interface PerkProps extends ComponentProps<'div'> {
   image: string | StaticImport

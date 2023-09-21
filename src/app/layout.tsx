@@ -2,7 +2,7 @@
 import Header from '@/components/Header'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Roboto_Flex, Bricolage_Grotesque } from 'next/font/google'
+import { Roboto_Flex, Inter } from 'next/font/google'
 import Footer from '@/components/Footer'
 
 const roboto = Roboto_Flex({
@@ -11,7 +11,7 @@ const roboto = Roboto_Flex({
   display: 'swap',
   variable: '--font-roboto',
 })
-const bricolage = Bricolage_Grotesque({
+const bricolage = Inter({
   subsets: ['latin'],
   weight: ['300', '400', '700', '800'],
   display: 'swap',
