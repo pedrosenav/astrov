@@ -1,19 +1,17 @@
+/* eslint-disable camelcase */
 import Header from '@/components/Header'
 import './globals.css'
 import type { Metadata } from 'next'
-import {
-  Roboto_Flex as Roboto,
-  Bricolage_Grotesque as Bricolage,
-} from 'next/font/google'
+import { Roboto_Flex, Bricolage_Grotesque } from 'next/font/google'
 import Footer from '@/components/Footer'
 
-const roboto = Roboto({
+const roboto = Roboto_Flex({
   subsets: ['latin'],
   weight: ['300', '400', '600', '700'],
   display: 'swap',
   variable: '--font-roboto',
 })
-const bricolage = Bricolage({
+const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
   weight: ['300', '400', '700', '800'],
   display: 'swap',
