@@ -1,7 +1,10 @@
 import Header from '@/components/Header'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Roboto_Flex as Roboto, Bayon } from 'next/font/google'
+import {
+  Roboto_Flex as Roboto,
+  Bricolage_Grotesque as Bricolage,
+} from 'next/font/google'
 import Footer from '@/components/Footer'
 
 const roboto = Roboto({
@@ -10,11 +13,11 @@ const roboto = Roboto({
   display: 'swap',
   variable: '--font-roboto',
 })
-const bayon = Bayon({
+const bricolage = Bricolage({
   subsets: ['latin'],
-  weight: ['400'],
+  weight: ['300', '400', '700', '800'],
   display: 'swap',
-  variable: '--font-bayon',
+  variable: '--font-bricolage',
 })
 
 export const metadata: Metadata = {
@@ -29,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.variable} ${bayon.variable} font-sans text-slate-950`}
+        className={`${roboto.variable} ${bricolage.variable} bg-white font-sans text-slate-950`}
       >
         <Header />
         {children}

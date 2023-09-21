@@ -15,10 +15,10 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: 'bg-sky-600 hover:bg-sky-500 hover:text-white',
-        secondary:
-          'bg-white/5 backdrop-blur border border-white/50 hover:bg-white/40 shadow',
-        outline: 'border-2 border-sky-600 hover:bg-sky-600 hover:text-white',
+        primary: 'bg-astrov-500 hover:bg-astrov-600 text-white',
+        secondary: 'bg-white hover:bg-slate-200 text-astrov-800',
+        outline:
+          'bg-white/5 backdrop-blur border border-white/50 hover:bg-white/40 shadow text-white',
       },
       size: {
         lg: 'text-lg py-2 px-5 min-w-[7rem]',

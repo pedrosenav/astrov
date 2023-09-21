@@ -18,9 +18,15 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: 'var(--font-roboto)',
-        alt: 'var(--font-bayon)',
+        alt: 'var(--font-bricolage)',
       },
       colors: {
+        astrov: {
+          800: '#031D40',
+          600: '#074E8C',
+          500: '#2995D9',
+          400: '#45BDF1',
+        },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

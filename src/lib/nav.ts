@@ -4,24 +4,24 @@ interface NavProps {
 }
 const Nav: NavProps[] = [
   {
-    title: 'Process',
-    url: '#',
+    title: 'Steps',
+    url: '/#steps',
   },
   {
     title: 'About me',
-    url: '#',
+    url: '/#about',
   },
   {
     title: 'Art styles',
-    url: '#',
+    url: '/#',
   },
   {
-    title: 'Gallery',
-    url: '#',
+    title: 'Projects',
+    url: 'projects',
   },
   {
-    title: 'Contact',
-    url: '#',
+    title: 'Get in touch',
+    url: '/#contact',
   },
 ]
 export { Nav, type NavProps }
