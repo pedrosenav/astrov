@@ -53,7 +53,7 @@ const perkList = [
 
 export default function PerksSection() {
   const [expanded, setExpanded] = useState<number>(0)
-  /* TODO: trocar os perks com tempo */
+  /* TODO: Trocar os perks com tempo */
 
   function handleMouseOver(i: number) {
     setExpanded(i)

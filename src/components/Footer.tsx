@@ -4,7 +4,7 @@ import Container from './Container'
 import AstrovLogo from '@/components/Astrov-Logo'
 import Link from 'next/link'
 import { SocialProps, Social } from '@/lib/social'
-import { Nav } from '@/lib/nav'
+import { Navigation } from '@/lib/nagivation'
 import VoidLogo from './Void-Logo'
 
 interface FooterListProps {
@@ -18,7 +18,7 @@ function FooterList({ links }: FooterListProps) {
       {links.map((link) => (
         <li
           key={link.text}
-          className="hover:text-astrov-400 hover:decoration-astrov-400 decoration-transparent underline-offset-4 transition-all duration-500 hover:underline"
+          className="decoration-transparent underline-offset-4 transition-all duration-500 hover:text-astrov-400 hover:underline hover:decoration-astrov-400"
         >
           <Link href={link.url}>{link.text}</Link>
         </li>
@@ -33,14 +33,14 @@ function SocialIcon({ icon: Icon, url, platformName }: SocialProps) {
       <Icon
         size={28}
         weight="regular"
-        className="fill-astrov-400 hover:fill-astrov-500 transition-all hover:scale-110"
+        className="fill-astrov-400 transition-all hover:scale-110 hover:fill-astrov-500"
       />
     </Link>
   )
 }
 
 export default function Footer() {
-  const navLinks = Nav.map((nav) => {
+  const navLinks = Navigation.map((nav) => {
     return {
       text: nav.title,
       url: nav.url,

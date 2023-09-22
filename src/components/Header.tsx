@@ -2,7 +2,7 @@
 
 import Link, { LinkProps } from 'next/link'
 import { ComponentProps } from 'react'
-import { Nav } from '@/lib/nav'
+import { Navigation } from '@/lib/nagivation'
 
 import { cn } from '@/lib/utils'
 import Container from './Container'
@@ -18,7 +18,7 @@ function NavLink({ children, href, className }: NavLinkProps) {
     <Link
       className={cn(
         'decoration-transparent underline-offset-8 transition-all duration-300 hover:text-astrov-400 hover:underline hover:decoration-astrov-400',
-        children === Nav.at(-1)?.title &&
+        children === Navigation.at(-1)?.title &&
           'rounded-md border-2 border-astrov-400 px-2 py-0.5 hover:no-underline',
         className,
       )}
@@ -39,7 +39,7 @@ export default function Header() {
 
         {/* Desktop Menu */}
         <nav className="hidden items-center gap-4 text-slate-900 sm:flex">
-          {Nav.map((link) => (
+          {Navigation.map((link) => (
             <NavLink key={link.title} href={link.url}>
               {link.title}
             </NavLink>
@@ -52,7 +52,7 @@ export default function Header() {
             <List size={28} weight="bold" />
           </SheetTrigger>
           <SheetContent className="flex flex-col border-zinc-50/10 bg-white py-12">
-            {Nav.map((link) => (
+            {Navigation.map((link) => (
               <NavLink key={link.title} href={link.url}>
                 {link.title}
               </NavLink>

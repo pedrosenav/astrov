@@ -30,13 +30,14 @@ const Social: SocialProps[] = [
   {
     title: '@astrovart',
     url: 'https://twitter.com/astrovart',
-    platformName: 'Reddit',
+    platformName: 'Twitter',
     icon: TwitterLogo,
   },
   {
     title: '@astrovart',
     url: 'https://www.artstation.com/arthurmagalhaes',
     platformName: 'Artstation',
+    /* FIXME: Vetorizar logo do ArtStation */
     icon: AngularLogo,
   },
   {

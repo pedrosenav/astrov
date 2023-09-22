@@ -13,7 +13,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 
 function SlideGradient() {
   return (
-    <div className="from-astrov-600/80 to-astrov-500/20 absolute z-10 min-h-[54rem] w-full overflow-hidden bg-gradient-to-r sm:to-transparent "></div>
+    <div className="absolute z-10 min-h-[54rem] w-full overflow-hidden bg-gradient-to-r from-astrov-600/80 to-astrov-500/20 sm:to-transparent "></div>
   )
 }
 

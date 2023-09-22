@@ -59,7 +59,7 @@ export default function ProjectsSection() {
           </h1>
 
           <Link
-            href={'/projects'}
+            href={'/gallery'}
             className={cn(
               'flex items-center justify-center gap-1 text-astrov-800',
               buttonVariants({ variant: 'secondary', size: 'lg' }),

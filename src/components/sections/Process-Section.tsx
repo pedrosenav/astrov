@@ -51,9 +51,9 @@ function Step({ title, path, index, className }: StepProps) {
   )
 }
 
-export default function StepsSection() {
+export default function ProcessSection({ id }: { id: string }) {
   return (
-    <section id="steps">
+    <section id={id}>
       <Container className="flex h-[52rem] max-w-6xl flex-col items-center justify-start gap-12 overflow-hidden py-12">
         <div className="space-y-4">
           {/* Title */}
@@ -75,7 +75,7 @@ export default function StepsSection() {
             className="peer peer-hover:opacity-10"
           />
           <Step
-            title={'Base'}
+            title={'Base color'}
             index={2}
             path={baseColor}
             className="peer absolute top-1/2 peer-hover:opacity-10 lg:pl-32"

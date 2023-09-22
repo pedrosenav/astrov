@@ -2,7 +2,7 @@
 import Header from '@/components/Header'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Roboto_Flex, Inter } from 'next/font/google'
+import { Roboto_Flex, Hanken_Grotesk } from 'next/font/google'
 import Footer from '@/components/Footer'
 
 const roboto = Roboto_Flex({
@@ -11,9 +11,10 @@ const roboto = Roboto_Flex({
   display: 'swap',
   variable: '--font-roboto',
 })
-const bricolage = Inter({
+/* TODO: Usar uma fonte que PEGUE DIREITO NESSA PORRA */
+const bricolage = Hanken_Grotesk({
   subsets: ['latin'],
-  weight: ['300', '400', '700', '800'],
+  weight: ['300', '400', '500', '600', '700', '800'],
   display: 'swap',
   variable: '--font-bricolage',
 })
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${bricolage.variable} bg-white font-sans text-slate-950`}
       >
+        {/* TODO: Adicionar tema escuro (next themes) */}
         <Header />
         {children}
         <Footer />

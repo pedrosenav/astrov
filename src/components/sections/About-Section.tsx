@@ -7,7 +7,7 @@ import Container from '../Container'
 import { SocialProps, Social } from '@/lib/social'
 import astrovFilho from '@/assets/images/theo2.png'
 
-export default function AboutSection() {
+export default function AboutSection({ id }: { id: string }) {
   function SocialIcon({ icon: Icon, url, platformName }: SocialProps) {
     return (
       <Link
@@ -27,7 +27,7 @@ export default function AboutSection() {
 
   return (
     <section
-      id="about"
+      id={id}
       className="relative flex h-[40] min-h-[40rem] w-full items-center justify-center overflow-hidden bg-white"
     >
       <Container className="absolute z-20 flex w-full items-center justify-start py-32">
