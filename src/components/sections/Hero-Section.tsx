@@ -2,17 +2,19 @@
 
 import { ArrowUpRight } from '@phosphor-icons/react'
 
-import { Button } from '../Button'
 import AstrovLogo from '../Astrov-Logo'
 import Carousel from '../Carousel'
+import Link from 'next/link'
+import { buttonVariants } from '../Button'
+import { cn } from '@/lib/utils'
 
 export default function HeroSection() {
   return (
     <section className="relative flex min-h-fit flex-col items-center justify-center overflow-hidden bg-white">
       <Carousel />
-      {/* FIXME: Mudar altura do carrossel para o mobile */}
+      {/* Fixed */}
 
-      <div className="margin-auto absolute top-80 z-20 w-full max-w-[30rem] p-5 md:left-20 md:m-0 ">
+      <div className="margin-auto absolute z-20 w-full max-w-[30rem] p-5 md:left-20 md:m-0 lg:top-80">
         <h1 className="flex w-full">
           <AstrovLogo className="w-full fill-white" />
         </h1>
@@ -26,13 +28,15 @@ export default function HeroSection() {
         </h2>
       </div>
 
-      <Button
-        className="absolute bottom-14 z-20 m-auto flex items-center gap-1 text-white md:right-20 md:m-0"
-        variant={'outline'}
-        size={'lg'}
+      <Link
+        className={cn(
+          buttonVariants({ variant: 'outline', size: 'lg' }),
+          'absolute bottom-14 z-20 m-auto flex items-center gap-1 text-white md:right-20 md:m-0',
+        )}
+        href={'/gallery'}
       >
-        View this project <ArrowUpRight weight="bold" size={20} />
-      </Button>
+        View gallery <ArrowUpRight weight="bold" size={20} />
+      </Link>
     </section>
   )
 }

@@ -49,7 +49,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-zinc-900">
-      <Container className="flex flex-col items-center justify-between gap-10 py-8 sm:flex-row sm:items-start">
+      <Container className="flex flex-col items-center justify-between gap-10 py-12 sm:flex-row sm:items-start">
         <div className="space-y-1">
           <Link href={'/'}>
             <AstrovLogo className="h-6 fill-white" />

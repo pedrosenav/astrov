@@ -37,15 +37,16 @@ function Step({ title, path, index, className }: StepProps) {
         <div className="h-full w-0 bg-astrov-400 duration-500 group-hover:w-full"></div>
       </div>
 
-      <div className="absolute left-0 m-2 flex items-start gap-3 rounded-full bg-white p-2 transition-all duration-500 group-hover:scale-105 md:relative md:m-0 md:bg-none md:p-0 md:group-hover:scale-100">
+      <div className="absolute left-0 m-2 flex items-start gap-3 rounded-full bg-white p-2 transition-all duration-500 group-hover:scale-105 md:relative md:m-0 md:bg-transparent md:bg-none md:p-0 md:group-hover:scale-100">
         {/* Index */}
         <span className="text-alt grid aspect-square h-8 shrink-0 place-content-center rounded-full border border-astrov-400 text-xl font-bold text-astrov-400/50 transition-colors delay-500 group-hover:text-astrov-400">
           {index}
         </span>
+
         {/* Title */}
-        <h3 className="w-fit pr-2 font-alt text-xl text-slate-300 transition-colors group-hover:text-astrov-800 md:min-w-[9rem] md:pr-0 md:text-2xl">
+        <p className="w-fit pr-2 font-alt text-xl text-slate-300 transition-colors group-hover:text-astrov-800 dark:group-hover:text-astrov-400 md:min-w-[9rem] md:pr-0 md:text-2xl">
           {title}
-        </h3>
+        </p>
       </div>
     </div>
   )
@@ -57,9 +58,14 @@ export default function ProcessSection({ id }: { id: string }) {
       <Container className="flex h-[52rem] max-w-6xl flex-col items-center justify-start gap-12 overflow-hidden py-12">
         <div className="space-y-4">
           {/* Title */}
-          <h2 className="max-w-md text-center font-alt text-4xl font-bold text-astrov-600">
-            Turn your imagination into reality in three steps
-          </h2>
+          <div className="space-y-2">
+            <h4 className="text-center tracking-wider text-slate-400">
+              Creation Process
+            </h4>
+            <h3 className="max-w-md text-center font-alt text-4xl font-bold text-astrov-600 dark:text-astrov-500">
+              Turn your imagination into reality in three steps
+            </h3>
+          </div>
           {/* Caption */}
           <span className="mx-auto flex w-fit items-center gap-2 font-light text-slate-400">
             <Info size={20} /> You&apos;ll be up to date with all the steps of

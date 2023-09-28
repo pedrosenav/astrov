@@ -77,7 +77,12 @@ body {
     --ring: 212.7 26.8% 83.9%;
   }
 }
- 
+
+::-moz-selection, ::selection { /* Code for Firefox */
+  color: white;
+  @apply bg-astrov-600
+}
+
 @layer base {
   * {
     @apply border-border;

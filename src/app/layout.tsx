@@ -1,8 +1,11 @@
 /* eslint-disable camelcase */
-import Header from '@/components/Header'
 import './globals.css'
+
 import type { Metadata } from 'next'
-import { Roboto_Flex, Hanken_Grotesk } from 'next/font/google'
+import { Roboto_Flex, Figtree } from 'next/font/google'
+
+import { ThemeProvider } from '@/components/Theme-Provider'
+import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 const roboto = Roboto_Flex({
@@ -12,11 +15,11 @@ const roboto = Roboto_Flex({
   variable: '--font-roboto',
 })
 /* TODO: Usar uma fonte que PEGUE DIREITO NESSA PORRA */
-const bricolage = Hanken_Grotesk({
+const figtree = Figtree({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700', '800'],
   display: 'swap',
-  variable: '--font-bricolage',
+  variable: '--font-figtree',
 })
 
 export const metadata: Metadata = {
@@ -31,12 +34,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.variable} ${bricolage.variable} bg-white font-sans text-slate-950`}
+        className={`${roboto.variable} ${figtree.variable} bg-white font-sans text-slate-950 dark:bg-zinc-900 dark:text-white`}
       >
-        {/* TODO: Adicionar tema escuro (next themes) */}
-        <Header />
-        {children}
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          disableTransitionOnChange
+        >
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )

@@ -18,7 +18,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: 'var(--font-roboto)',
-        alt: 'var(--font-bricolage)',
+        alt: 'var(--font-figtree)',
       },
       colors: {
         astrov: {

@@ -11,7 +11,7 @@ export default function AboutSection({ id }: { id: string }) {
   function SocialIcon({ icon: Icon, url, platformName }: SocialProps) {
     return (
       <Link
-        className="rounded-md bg-astrov-600 p-1 transition-all hover:scale-110 hover:bg-astrov-500 "
+        className="rounded-md bg-astrov-600 p-1 transition-all hover:bg-astrov-500 "
         href={url}
         title={platformName}
         target="_blank"
@@ -19,7 +19,7 @@ export default function AboutSection({ id }: { id: string }) {
         <Icon
           size={28}
           weight="regular"
-          className="fill-sky-100 transition-all hover:scale-110"
+          className="fill-sky-100 transition-all"
         />
       </Link>
     )

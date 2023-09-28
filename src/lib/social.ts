@@ -1,10 +1,10 @@
 import {
-  AngularLogo,
   EnvelopeSimple,
   InstagramLogo,
   RedditLogo,
   TwitterLogo,
 } from '@phosphor-icons/react'
+import ArtStationLogo from '@/components/ArtStation-Logo'
 import { ElementType } from 'react'
 
 interface SocialProps {
@@ -36,13 +36,12 @@ const Social: SocialProps[] = [
   {
     title: '@astrovart',
     url: 'https://www.artstation.com/arthurmagalhaes',
-    platformName: 'Artstation',
-    /* FIXME: Vetorizar logo do ArtStation */
-    icon: AngularLogo,
+    platformName: 'ArtStation',
+    icon: ArtStationLogo,
   },
   {
     title: 'astrovart1@gmail.com',
-    url: 'astrovart1@gmail.com',
+    url: 'mailto:astrovart1@gmail.com',
     platformName: 'E-mail',
     icon: EnvelopeSimple,
   },
