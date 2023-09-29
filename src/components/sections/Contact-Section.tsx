@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
+import { useToast } from '@/components/ui/use-toast'
 
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -23,6 +24,7 @@ import { Button } from '../Button'
 
 import retangulo from '@/assets/form-bg.svg'
 import sonic from '@/assets/images/sonic-black-white.png'
+import { CircleNotch } from '@phosphor-icons/react'
 
 const formSchema = z.object({
   name: z.string().nonempty('Name is required'),
@@ -33,22 +35,50 @@ const formSchema = z.object({
   message: z.string().nonempty('Message is required'),
 })
 
-type FormFieldsData = z.infer<typeof formSchema>
+export type FormFieldsData = z.infer<typeof formSchema>
 
 export default function Contact({ id }: { id: string }) {
   const form = useForm<FormFieldsData>({ resolver: zodResolver(formSchema) })
 
+  const { toast } = useToast()
+
   async function sendEmail(data: FormFieldsData) {
-    /* TODO: Validate if the email was submitted */
-    form.reset({
-      name: '',
-      email: '',
-      message: '',
+    const response = await fetch('/api/contact-1111', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data, null, 2),
     })
+
+    if (response.ok) {
+      toast({
+        duration: 2000,
+        title: 'Email sent successfully',
+        description: 'Thanks for reaching out :)',
+      })
+      console.log('Email sent successfully!')
+      form.reset({
+        name: '',
+        email: '',
+        message: '',
+      })
+    } else {
+      toast({
+        duration: 2000,
+        title: 'Email could not be sent',
+        description: 'An error occurred, please try again',
+      })
+      console.log(
+        'Email could not be sent: An error occurred, please try again',
+      )
+    }
   }
+
   return (
-    <section className="relative min-h-[40rem] overflow-clip" id={id}>
-      <Container className="absolute bottom-0 left-0 right-0 z-20 m-auto flex h-[40rem] w-full items-center justify-center gap-8 md:justify-between">
+    <section className="relative min-h-[44rem] overflow-clip" id={id}>
+      <Container className="absolute bottom-0 left-0 right-0 z-20 flex h-[40rem] w-full items-center justify-center gap-8 md:justify-between">
+        {/* Contact Form */}
+        {/* TODO: Botão muito perto da section */}
+
         <div className="flex w-96 flex-col gap-12 sm:min-w-[26rem]">
           {/* Title */}
           <div className="space-y-2">
@@ -78,7 +108,7 @@ export default function Contact({ id }: { id: string }) {
                         className="border-b-4 border-astrov-400 bg-white/60 text-lg backdrop-blur-lg transition-all hover:border-astrov-500 focus:border-astrov-500 focus-visible:ring-0 dark:border-astrov-400/30 dark:bg-zinc-900/90"
                         type="text"
                         {...field}
-                        {...form.register}
+                        {...form.register('name')} // This will make its value available for both the form validation and submission
                       />
                     </FormControl>
                     <FormMessage className="dark:text-red-400" />
@@ -100,7 +130,7 @@ export default function Contact({ id }: { id: string }) {
                         className="border-b-4 border-astrov-400 bg-white/60 text-lg backdrop-blur-lg transition-all hover:border-astrov-500 focus:border-astrov-500 focus-visible:ring-0 dark:border-astrov-400/30 dark:bg-zinc-900/90"
                         type="email"
                         {...field}
-                        {...form.register}
+                        {...form.register('email')}
                       />
                     </FormControl>
                     <FormMessage className="dark:text-red-400" />
@@ -122,7 +152,7 @@ export default function Contact({ id }: { id: string }) {
                         className="max-h-[10rem] min-h-[5rem] border-b-4 border-astrov-400 bg-white/60 text-lg backdrop-blur-lg transition-all hover:border-astrov-500 focus:border-astrov-500 focus-visible:ring-0 dark:border-astrov-400/30 dark:bg-zinc-900/90"
                         rows={5}
                         {...field}
-                        {...form.register}
+                        {...form.register('message')}
                       />
                     </FormControl>
                     <FormMessage className="dark:text-red-400" />
@@ -130,7 +160,11 @@ export default function Contact({ id }: { id: string }) {
                 )}
               />
               <Button className="text-white" type="submit">
-                {form.formState.isLoading ? 'Submitting...' : 'Submit'}
+                {form.formState.isSubmitting ? (
+                  <CircleNotch size={20} className="mx-auto animate-spin" />
+                ) : (
+                  'Submit'
+                )}
               </Button>
             </form>
           </Form>
@@ -140,13 +174,14 @@ export default function Contact({ id }: { id: string }) {
         <Image
           src={sonic}
           alt="sonic"
-          className="hidden h-full w-fit transition-all duration-700 hover:-translate-x-5 md:block"
+          className="hidden min-h-full w-fit transition-all duration-700 hover:-translate-x-5 md:block"
         />
       </Container>
       {/* Background */}
+      {/* TODO: Retangulo quebrando no resposivo */}
       <Image
         src={retangulo}
-        alt="retangulo background"
+        alt="Background"
         className="absolute right-0 hidden min-h-full md:block"
       />
     </section>

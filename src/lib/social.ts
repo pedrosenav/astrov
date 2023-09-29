@@ -34,7 +34,7 @@ const Social: SocialProps[] = [
     icon: TwitterLogo,
   },
   {
-    title: '@astrovart',
+    title: '/arthurmagalhaes',
     url: 'https://www.artstation.com/arthurmagalhaes',
     platformName: 'ArtStation',
     icon: ArtStationLogo,

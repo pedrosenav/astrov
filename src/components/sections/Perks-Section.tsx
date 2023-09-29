@@ -52,7 +52,7 @@ const perkList = [
   },
   {
     image: image2,
-    title: 'Add your beloved pet to your artwork',
+    title: 'Mussum Ipsum, cacilds vidis litro abertis',
   },
   {
     image: image3,

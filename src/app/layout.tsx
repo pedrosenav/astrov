@@ -4,6 +4,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Roboto_Flex, Figtree } from 'next/font/google'
 
+import { Toaster } from '@/components/ui/toaster'
 import { ThemeProvider } from '@/components/Theme-Provider'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -38,12 +39,13 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           disableTransitionOnChange
         >
           <Header />
           {children}
           <Footer />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
