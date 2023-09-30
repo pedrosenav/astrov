@@ -24,7 +24,7 @@ import { Button } from '../Button'
 
 import retangulo from '@/assets/form-bg.svg'
 import sonic from '@/assets/images/sonic-black-white.png'
-import { CircleNotch } from '@phosphor-icons/react'
+import { Check, CircleNotch } from '@phosphor-icons/react'
 
 const formSchema = z.object({
   name: z.string().nonempty('Name is required'),
@@ -43,13 +43,14 @@ export default function Contact({ id }: { id: string }) {
   const { toast } = useToast()
 
   async function sendEmail(data: FormFieldsData) {
-    const response = await fetch('/api/contact-1111', {
+    const response = await fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data, null, 2),
     })
 
     if (response.ok) {
+      /* TODO: Estilizar os toasts */
       toast({
         duration: 2000,
         title: 'Email sent successfully',
@@ -77,7 +78,7 @@ export default function Contact({ id }: { id: string }) {
     <section className="relative min-h-[44rem] overflow-clip" id={id}>
       <Container className="absolute bottom-0 left-0 right-0 z-20 flex h-[40rem] w-full items-center justify-center gap-8 md:justify-between">
         {/* Contact Form */}
-        {/* TODO: Botão muito perto da section */}
+        {/* FIXME: Botão muito perto da section */}
 
         <div className="flex w-96 flex-col gap-12 sm:min-w-[26rem]">
           {/* Title */}
@@ -178,7 +179,7 @@ export default function Contact({ id }: { id: string }) {
         />
       </Container>
       {/* Background */}
-      {/* TODO: Retangulo quebrando no resposivo */}
+      {/* FIXME: Retangulo quebrando no resposivo */}
       <Image
         src={retangulo}
         alt="Background"

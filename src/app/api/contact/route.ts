@@ -20,10 +20,11 @@ export async function POST(request: Request) {
 
     transporter.sendMail({
       from: `${name} <${user}>`,
-      to: user,
+      to: process.env.NEXT_PUBLIC_ASTROV,
       subject: `New message from ${name}`,
       html: `<p>${message}</p>`,
       text: message,
+      replyTo: email,
     })
 
     return NextResponse.json({
